@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import '../Home/Home.scss'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
+import Nav from '../Nav/Nav'
 
 const Home = ({ setUser, setProfile }) => {
     const navigate = useNavigate();
@@ -52,19 +53,22 @@ console.log(chatMembers);
                 <div className="user-list">
                     {
                     chatMembers.map((member,ind)=>
+                        <Link to={`/chat/${member._id}`}>
                         <div className="user-item">
                             <div className="profile-pic">
                                 <img src={member.profile} alt="user"/>
                             </div>
                             <div className="user-info">
-                                <Link to={`/chat/${member._id}`}><h3>{member.username}</h3></Link>
+                                <h3>{member.username}</h3>
                             </div>
                         </div>
-                            )}     
+                                </Link>
+                            )}   
+                            <div className="chat">
+                            <Link to="/contacts"><img src="./img/add.png" alt="" /></Link>
+                        </div>  
                 </div>
-                <div className="chat">
-                            <Link to="/contacts"><img src="/chat.png" alt="" /></Link>
-                        </div>
+                
             </div>
         </div>
     )

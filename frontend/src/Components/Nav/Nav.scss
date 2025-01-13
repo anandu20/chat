@@ -1,39 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Dosis:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rouge+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Bebas+Neue&family=Ephesis&family=Jost:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
 .nav{
     display: flex;
     align-items: center;
     justify-content: center;
+    
     nav{
+        margin-top:10px;
         width: 75%;
-        height: 7vh;
-        background-color:#00ABE4;
+        height: 9vh;
+        background-color: #000000;
         color: rgb(255, 255, 255);
         display: flex;
         align-items: center;
         justify-content: space-between;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ 
         .left{
             display: flex;
+            gap: 10px;
             align-items: center;
             justify-content: center;
             margin: 2%;
+            .mate{
+                font-size: 40px;
+                color: #0f995b;
+                font-family: "Ephesis", serif;
+            }
             .logo{
-                width: 50px;
-                height: 50px;
+                width: 40px;
+                height: 40px;
                 img{
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
                 }
             }
+            a{
+                text-decoration: none;
+                color: white;
 
-            .monserat {
-                font-family: "Montserrat", serif;
-                font-optical-sizing: auto;
-                font-weight: 700;
-                font-style: normal;
-                font-size: 32px;
-              }
+
+
+          
+            }
+
+            // .monserat {
+            //     font-family: "Montserrat", serif;
+            //     font-optical-sizing: auto;
+            //     font-weight: 700;
+            //     font-style: normal;
+            //     font-size: 32px;
+            //     margin-left: 6px;
+            //   }
               
         }
         .right{ 

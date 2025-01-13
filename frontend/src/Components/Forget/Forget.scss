@@ -1,17 +1,12 @@
-.signup{
-    background-color: #252525;
-    width: 100%;
-    height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-    .card3{
+.forgot{
+    .card7{
+        height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
-    .card4{
+    .card8{
         width: 350px;
-        height: auto;
+        height: 400px;
         text-align: center;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
@@ -22,20 +17,14 @@
         padding-left: 2em;
         padding-right: 2em;
         padding-bottom: 0.4em;
-        background-color: #171717;
+        background-color: #000000;
         border-radius: 20px;
       }
-      p{
-        color: white;
-        margin-bottom: 5px;
-        a{
-          color: #078559;
-        }
-      }
+      
       #heading {
         text-align: center;
         margin: 2em;
-        color: rgb(255, 255, 255);
+        color: rgb(10, 155, 124);
         font-size: 1.2em;
       }
       
@@ -49,14 +38,14 @@
         border: none;
         outline: none;
         color: white;
-        background-color: #171717;
-        box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+        background-color: #f0e7e7;
+        box-shadow: inset 2px 5px 10px rgb(239, 232, 232);
       }
       
       .input-icon {
         height: 1.3em;
         width: 1.3em;
-        fill: rgb(255, 255, 255);
+        fill: rgb(18, 117, 95);
       }
       
       .input-field {
@@ -64,7 +53,7 @@
         border: none;
         outline: none;
         width: 100%;
-        color: rgb(11, 97, 79);
+        color: rgb(4, 9, 8);
       }
       
       .form .btn {
@@ -83,13 +72,13 @@
         border: none;
         outline: none;
         transition: .4s ease-in-out;
-        background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+        background-color: #0e7c53;
         color: rgb(0, 0, 0);
       }
       
       .button1:hover {
-        background-image: linear-gradient(163deg, #00642f 0%, #13034b 100%);
-        color: rgb(13, 95, 77);
+        background-color: #0e7c53;
+        color: rgb(0, 255, 200);
       }
       
       .button2 {
@@ -116,12 +105,12 @@
         border: none;
         outline: none;
         transition: .4s ease-in-out;
-       background-color: #177443;
-        color: rgb(203, 203, 203);
+        background-color: #0e7c53;
+        color: rgb(255, 255, 255);
       }
       
       .button3:hover {
-        background-image: linear-gradient(163deg, #a00000fa 0%, #d10050 100%);
+        background-color: #0c543a;
         color: rgb(255, 255, 255);
       }
       
@@ -144,19 +133,6 @@
       .card:hover {
         box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
       }
-      .display{
-        display: hidden;
-        text-align: center;
-        width: 100px;
-        height: 100px;
-        img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-      }
-     
-      
     }
     }
     }
-}

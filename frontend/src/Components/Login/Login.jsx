@@ -14,9 +14,9 @@ const Login = () => {
     e.preventDefault();
     try {
       const { status, data } = await axios.post(`${route()}signin`, loginDetails, { Headers: { "Content-Type": "application/json" } });
-      if (status === 200) {
+      if (status === 201) {
         localStorage.setItem("Auth", data.token);
-        alert(data.msg)
+        alert(data.msg);
         navigate('/');
       } else { 
         alert(data.msg );
@@ -63,8 +63,8 @@ const Login = () => {
         <button className="button1">Login</button>
         <Link to="/signup"><button className="button2">Sign Up</button></Link>
       </div>
-      <button className="button3">Forgot Password</button>
-    </form>
+      <Link to="/email"><button className="button3">Forgot Password</button></Link>
+      </form>
        
     </div>
   )

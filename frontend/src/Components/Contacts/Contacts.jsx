@@ -42,7 +42,7 @@ const Contacts = ({ setUser, setProfile }) => {
                                 <img src={users.profile} alt="user"/>
                             </div>
                             <div className="user-info">
-                                <h3><Link to={`/chat/${users._id}`}>{users.username}</Link></h3>
+                                <h3 className='namee'><Link to={`/chat/${users._id}`}>{users.username}</Link></h3>
                             </div>
                         </div>
                         ))}    
