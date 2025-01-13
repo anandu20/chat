@@ -1,5 +1,8 @@
 
 import loginSchema from './models/user.model.js'
+import chatSchema from './models/chat.model.js';
+import memberSchema from './models/member.model.js';
+
 import bcrypt from "bcrypt";
 import pkg from "jsonwebtoken";
 import nodemailer from "nodemailer";
@@ -16,7 +19,6 @@ const transporter = nodemailer.createTransport({
   export async function signUp(req, res) {
     try {
       const { email, username, password, cpassword,profile} = req.body;
-      console.log(req.body);
       if (!(email && username && password && cpassword && profile))
         return res.status(404).send({ msg: "Fields are empty" });
       if (password != cpassword)
@@ -42,8 +44,10 @@ const transporter = nodemailer.createTransport({
   export async function signIn(req, res) {
     try {
       const { email, password } = req.body;
+      console.log(req.body);
+      
       const user = await loginSchema.findOne({ email });
-      console.log(user);
+   
       if (!(email && password))
         return res.status(404).send({ msg: "Fields are empty" });
       if (user === null) return res.status(404).send({ msg: "User not found" });
@@ -58,3 +62,44 @@ const transporter = nodemailer.createTransport({
       return res.status(404).send({ msg: "Error" });
     }
   }
+
+  export async function profile(req,res) {
+    try {
+         const id = req.user.userId;
+        const data = await loginSchema.findOne({_id:id})
+        return res.status(201).send({data})
+    } catch (error) {
+        return res.status(404).send({msg:error}); 
+
+    }
+    
+}
+
+export async function getAllContacts(req,res) {
+  try {
+        const id = req.user.userId;
+        const data = await loginSchema.find({ _id: { $ne: id } });
+        return res.status(201).send(data)
+  } catch (error) {
+    return res.status(404).send({msg:error}); 
+  }
+  
+}
+export async function getMembers(req, res) {
+  try {
+    const _id = req.user.userId;
+    const receivers=await memberSchema.find({$or:[{senderId:_id},{recieverId:_id}]});
+        const chatMemberPromises = receivers.map(async (receiver) => {
+            if(receiver.senderId==_id)
+                return await loginSchema.findOne({ _id: receiver.recieverId },{username:1,profile:1});
+            if(receiver.recieverId==_id)
+                return await loginSchema.findOne({ _id: receiver.senderId },{username:1,profile:1});
+        });
+        const chatMembers = await Promise.all(chatMemberPromises);  
+        console.log(chatMembers);
+        
+    return res.status(201).send({chatMembers}); 
+  } catch (error) {
+    return res.status(404).send({ msg: error });
+  }
+}
