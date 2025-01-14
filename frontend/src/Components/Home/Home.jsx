@@ -65,7 +65,7 @@ console.log(chatMembers);
                                 </Link>
                             )}   
                             <div className="chat">
-                            <Link to="/contacts"><img src="./img/add.png" alt="" /></Link>
+                            <Link to="/contacts"><img src="./img/addd.png" alt="" /></Link>
                         </div>  
                 </div>
                 
