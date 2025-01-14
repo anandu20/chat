@@ -9,6 +9,7 @@ import Chat from './Components/Chat/Chat';
 import Edit from './Components/Edit/Edit';
 import Email from './Components/Email/Email';
 import Forget from './Components/Forget/Forget';
+import Profile from './Components/Profile/Profile';
 
 
 function App() {
@@ -28,6 +29,8 @@ function App() {
   <Route path='/edit' element={<Edit setUser={setUser} setProfile={setProfile}/>}></Route>
   <Route path='/forget' Component={Forget}></Route>
   <Route path='/email' Component={Email}></Route>
+  <Route path='/profile/:id' element={<Profile setUser={setUser} setProfile={setProfile}/>}/>
+
 
  </Routes>
  </BrowserRouter>  )
